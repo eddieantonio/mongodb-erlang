@@ -32,7 +32,7 @@
 -include("mongo_protocol.hrl").
 
 -type connection() :: pid().
--type database()   :: atom().
+-type database()   :: binary() | atom().
 -type cursor()     :: pid().
 -type write_mode() :: unsafe | safe | {safe, bson:document()}.
 -type read_mode()  :: master | slave_ok.
