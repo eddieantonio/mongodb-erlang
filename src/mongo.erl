@@ -163,7 +163,7 @@ count(Coll, Selector) ->
 %     Ie. stops counting when max is reached to save processing time.
 -spec count(collection(), selector(), integer()) -> integer().
 count(Coll, Selector, Limit) ->
-	CollStr = atom_to_binary(Coll, utf8),
+	CollStr = value_to_binary(Coll),
 	Doc = command(case Limit =< 0 of
 		true -> {count, CollStr, 'query', Selector};
 		false -> {count, CollStr, 'query', Selector, limit, Limit}

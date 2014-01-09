@@ -2,7 +2,7 @@
 
 -type db() :: atom().
 
--type collection() :: atom(). % without db prefix
+-type collection() :: binary() | atom(). % without db prefix
 
 -type cursorid() :: integer().
 
